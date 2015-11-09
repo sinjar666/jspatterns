@@ -1,0 +1,26 @@
+{
+  "name": "jspatterns",
+  "version": "1.0.0",
+  "description": "A library with common design patterns implemented in JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sinjar666/jspatterns.git"
+  },
+  "keywords": [
+    "js",
+    "patterns",
+    "gof",
+    "gangoffour",
+    "designpatterns"
+  ],
+  "author": "Srijan Mukherjee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sinjar666/jspatterns/issues"
+  },
+  "homepage": "https://github.com/sinjar666/jspatterns#readme"
+}
