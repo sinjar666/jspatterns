@@ -19,7 +19,7 @@
     this.dispatch = dispatch;
   };
 
-  _Dispatch.prototype = Object.create(_Dispatch.prototype);
+  _Dispatch.prototype = Object.create(_ICommand.prototype);
   _Dispatch.prototype.constructor = _Dispatch;
 
   _Dispatch.prototype.execute = function(command, args)
