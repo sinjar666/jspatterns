@@ -1,35 +1,38 @@
-"use strict";
+(function() {
+  "use strict";
 
-/**
-* Command interface definition
-*/
-var _ICommand = function () {
-  this.execute = undefined;
-};
+  /**
+  * Command interface definition
+  */
+  var _ICommand = function () {
+    this.execute = undefined;
+  };
 
-/**
- * The Dispatcher command that is a wrapper over the execute
- * method of the command which allows clients to provide a
- * custom way to execute any command
- */
-var _Dispatch = function(dispatch) {
-  _ICommand.call(this);
-  this.dispatch = dispatch;
-};
+  /**
+   * The Dispatcher command that is a wrapper over the execute
+   * method of the command which allows clients to provide a
+   * custom way to execute any command
+   */
+  var _Dispatch = function(dispatch) {
+    _ICommand.call(this);
+    this.dispatch = dispatch;
+  };
 
-_Dispatch.prototype = Object.create(_Dispatch.prototype);
-_Dispatch.prototype.constructor = _Dispatch;
+  _Dispatch.prototype = Object.create(_Dispatch.prototype);
+  _Dispatch.prototype.constructor = _Dispatch;
 
-_Dispatch.prototype.execute = function(command, args = undefined)
-{
-   if(typeof (this.dispatch) == 'function' &&
-      typeof (command.execute) == 'function')
-      {
-        this.dispatch.call(this, command, args);
-      }
-};
+  _Dispatch.prototype.execute = function(command, args)
+  {
+     if(typeof (this.dispatch) == 'function' &&
+        typeof (command.execute) == 'function')
+        {
+          this.dispatch.call(this, command, args || undefined);
+        }
+  };
 
-module.exports = {
-  ICommand: _ICommand,
-  Dispatch: _Dispatch
-};
+  module.exports = {
+    ICommand: _ICommand,
+    Dispatch: _Dispatch
+  };
+
+}());

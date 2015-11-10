@@ -1,5 +1,5 @@
 var jspatterns = {
-  behavioral: require("./behavioral");
-}
+  behavioral: require("./behavioral")
+};
 
 module.exports = jspatterns;
